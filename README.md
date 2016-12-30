@@ -1,7 +1,7 @@
 This code is designed to numerically solve the <a href="https://en.wikipedia.org/wiki/Poisson's_equation"> Poisson equation</a> using the <a href="https://en.wikipedia.org/wiki/Mixed_finite_element_method"> mixed finite element method</a>.  The code runs in parallel using multithreading through the Intel Thread Building Blocks.
 
-** Note ** 
-This project improves upon <a href="https://www.dealii.org/8.4.1/doxygen/deal.II/step_20.html"> step-20 in the deal.ii tutorial by:
+**Note** 
+This project improves upon <a href="https://www.dealii.org/8.4.1/doxygen/deal.II/step_20.html"> step-20 </a>in the deal.ii tutorial by:
 
 - Adding Neumann boundary conditions.
 - Allow for multithreading to reduce runtimes.
