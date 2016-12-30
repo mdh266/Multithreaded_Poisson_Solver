@@ -14,13 +14,13 @@ The requirements for this software is deal.ii library version 8.4.0 or highe and
 **Compiling**
 To generate a makefile for this code using CMake type into the terminal:
 
-* cmake . -DDEAL_II_DIR=/path_to_deal.ii *
+*cmake . -DDEAL_II_DIR=/path_to_deal.ii*
 
 To compile the code in release mode use:
 
-*make release *
+*make release*
 
-** Running **
+**Running**
 To run the executable use:
 
-* ./main *
+*./main*
