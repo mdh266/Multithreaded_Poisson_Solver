@@ -1,32 +1,26 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.8)
+This code is designed to numerically solve the <a href="https://en.wikipedia.org/wiki/Poisson's_equation"> Poisson equation</a> using the <a href="https://en.wikipedia.org/wiki/Mixed_finite_element_method"> mixed finite element method</a>.  The code runs in parallel using multithreading through the Intel Thread Building Blocks.
 
-FIND_PACKAGE(deal.II 8.0 QUIET
-  HINTS ${deal.II_DIR} ${DEAL_II_DIR} ../ ../../ $ENV{DEAL_II_DIR}
-  )
-IF(NOT ${deal.II_FOUND})
-  MESSAGE(FATAL_ERROR "\n"
-    "*** Could not locate deal.II. ***\n\n"
-    "You may want to either pass a flag -DDEAL_II_DIR=/path/to/deal.II to cmake\n"
-    "or set an environment variable \"DEAL_II_DIR\" that contains this path."
-    )
-ENDIF()
+** Note ** 
+This project improves upon <a href="https://www.dealii.org/8.4.1/doxygen/deal.II/step_20.html"> step-20 in the deal.ii tutorial by:
 
-# Set the name of the project and target:
-SET(TARGET "main")
+- Adding Neumann boundary conditions.
+- Allow for multithreading to reduce runtimes.
+ 
+**Requirements**
+The requirements for this software is deal.ii library version 8.4.0 or highe and CMake version 2.8 or higher.
 
-# Set the files to be cleaned up
-SET(CLEAN_UP_FILES *.dat *.vtk *.eps)
+**Installation** First obtain and install a copy of the dealii deal.ii library version 8.4.0 or higher. 
 
-# Set the inlucde files
-INCLUDE_DIRECTORIES("include")
+**Compiling**
+To generate a makefile for this code using CMake type into the terminal:
 
-# Declare all source files the target consists of:
-FILE(GLOB TARGET_SRC "./source/*.cpp")
+* cmake . -DDEAL_II_DIR=/path_to_deal.ii *
 
+To compile the code in release mode use:
 
+*make release *
 
+** Running **
+To run the executable use:
 
-
-DEAL_II_INITIALIZE_CACHED_VARIABLES()
-PROJECT(${TARGET})
-DEAL_II_INVOKE_AUTOPILOT()
+* ./main *
